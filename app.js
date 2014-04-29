@@ -2,14 +2,14 @@ var app = angular.module("dribbbleScorer", []);
 
 app.controller("DribbbleController", function($scope, $http){
   $scope.newPlayer = null; // Our model value is null by default
-  $scope.players = ["Tom", "Dick", "Harry"];
+  $scope.players = []; // We'll start with an empty list
 
   // Fetches a Dribbble player and adds them to the list
   $scope.addPlayer = function(player){
     $http.jsonp(
       'http://api.dribbble.com/players/' + player + '?callback=JSON_CALLBACK'
     ).success(function(dribbble_player){
-      $scope.players.push(dribbble_player.name);
+      $scope.players.push(dribbble_player); // Here we add the dribbble_player object to the list
     }).error(function(){
       // handle errors
     });

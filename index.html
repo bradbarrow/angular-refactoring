@@ -20,7 +20,8 @@
         <ul class="list-group">
           <!-- Loop over players using ng-repeat -->
           <li class="list-group-item" ng-repeat="player in players">
-            {{player}}
+            <!-- We use player.name here instead of just player -->
+            {{player.name}}
             <a href="" ng-click="removePlayer(player)">
               <i class="glyphicon glyphicon-remove pull-right"></i>
             </a>
