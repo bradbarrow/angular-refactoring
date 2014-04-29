@@ -14,14 +14,6 @@ app.controller("DribbbleController", function($scope, DribbblePlayer){
   $scope.removePlayer = function(player){
     $scope.players.splice($scope.players.indexOf(player), 1);
   }
-
-  $scope.likeScore = function(player){
-    return player.likes_received_count - player.likes_count;
-  }
-
-  $scope.commentScore = function(player){
-    return player.comments_received_count - player.comments_count;
-  }
 });
 
 // We need to inject the $http service in to our factory
@@ -41,6 +33,14 @@ app.factory("DribbblePlayer",function($http){
       playerData.then(function(response){
         angular.extend(self, response.data);
       });
+    }
+
+    this.likeScore = function(){
+      return this.likes_received_count - this.likes_count;
+    }
+
+    this.commentScore = function(){
+      return this.comments_received_count - this.comments_count;
     }
 
     // Call the initialize function for every new instance
