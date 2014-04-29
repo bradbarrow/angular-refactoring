@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="dribbbleScorer">
+  <head>
+    <title>Angular Refactoring</title>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.15/angular.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body>
+    <div ng-controller="DribbbleController">
+      <div class="panel panel-default">
+        <div class="panel-heading">Dribbble Player Scores</div>
+        <div class="panel-body">
+          <p>Add Dribbble players to see how they rank:</p>
+          <div class="form-inline">
+            <input class="form-control" type="text" />
+            <button class="btn btn-default">Add</button>
+          </div>
+        </div>
+        <ul class="list-group">
+	  <!-- Loop over players using ng-repeat -->
+	  <li class="list-group-item" ng-repeat="player in players">
+	    {{player}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
+
