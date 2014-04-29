@@ -15,5 +15,10 @@ app.controller("DribbbleController", function($scope, $http){
     });
   }
 
+  $scope.removePlayer = function(player){
+    $scope.players.splice($scope.players.indexOf(player), 1);
+  }
+
+
 });
 

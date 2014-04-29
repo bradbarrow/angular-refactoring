@@ -18,9 +18,12 @@
            </div>
         </div>
         <ul class="list-group">
-	  <!-- Loop over players using ng-repeat -->
-	  <li class="list-group-item" ng-repeat="player in players">
-	    {{player}}
+          <!-- Loop over players using ng-repeat -->
+          <li class="list-group-item" ng-repeat="player in players">
+            {{player}}
+            <a href="" ng-click="removePlayer(player)">
+              <i class="glyphicon glyphicon-remove pull-right"></i>
+            </a>
           </li>
         </ul>
       </div>
