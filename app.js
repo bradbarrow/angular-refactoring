@@ -19,6 +19,12 @@ app.controller("DribbbleController", function($scope, $http){
     $scope.players.splice($scope.players.indexOf(player), 1);
   }
 
+  $scope.likeScore = function(player){
+    return player.likes_received_count - player.likes_count;
+  }
 
+  $scope.commentScore = function(player){
+    return player.comments_received_count - player.comments_count;
+  }
 });
 

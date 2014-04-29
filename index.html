@@ -17,16 +17,14 @@
              <button class="btn btn-default" ng-click="addPlayer(newPlayer)">Add</button>
            </div>
         </div>
-        <ul class="list-group">
-          <!-- Loop over players using ng-repeat -->
-          <li class="list-group-item" ng-repeat="player in players">
-            <!-- We use player.name here instead of just player -->
-            {{player.name}}
-            <a href="" ng-click="removePlayer(player)">
-              <i class="glyphicon glyphicon-remove pull-right"></i>
-            </a>
-          </li>
-        </ul>
+	<ul class="list-group">
+	  <li class="list-group-item" ng-repeat="player in players">
+	    {{player.name}} L: {{likeScore(player)}} C:{{commentScore(player)}}
+	    <a href="" ng-click="removePlayer(player)">
+	      <i class="glyphicon glyphicon-remove pull-right"></i>
+	    </a>
+	  </li>
+	</ul>
       </div>
     </div>
   </body>
