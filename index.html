@@ -12,10 +12,10 @@
         <div class="panel-heading">Dribbble Player Scores</div>
         <div class="panel-body">
           <p>Add Dribbble players to see how they rank:</p>
-          <div class="form-inline">
-            <input class="form-control" type="text" />
-            <button class="btn btn-default">Add</button>
-          </div>
+           <div class="form-inline">
+             <input class="form-control" type="text" ng-model="newPlayer" />
+             <button class="btn btn-default" ng-click="addPlayer(newPlayer)">Add</button>
+           </div>
         </div>
         <ul class="list-group">
 	  <!-- Loop over players using ng-repeat -->
